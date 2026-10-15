@@ -19,7 +19,7 @@ public class TotemUtil {
 
         int cur = mc.player.getInventory().selectedSlot;
         if (slot != cur) net.sendPacket(new UpdateSelectedSlotC2SPacket(slot));
-        net.sendPacket(new PlayerActionC2SPacket(PlayerActionC2SPacket.Action.SWAP_ITEMS_WITH_OFFHAND, BlockPos.ORIGIN, Direction.DOWN));
+        net.sendPacket(new PlayerActionC2SPacket(PlayerActionC2SPacket.Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ORIGIN, Direction.DOWN));
         if (slot != cur) net.sendPacket(new UpdateSelectedSlotC2SPacket(cur));
         return true;
     }
